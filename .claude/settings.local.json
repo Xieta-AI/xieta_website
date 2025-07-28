@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.eternal.com)",
+      "Bash(python:*)",
+      "WebFetch(domain:)"
+    ],
+    "deny": []
+  }
+}
