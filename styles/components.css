@@ -560,3 +560,83 @@
         display: none;
     }
 }
+
+/* Global grayscale effect with hover color restoration */
+* {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* Keep mathematical symbols always colorful and above interactions */
+.cursor-orbit-particle,
+.cursor-orbit-particle * {
+    filter: grayscale(0%) !important;
+    pointer-events: none !important;
+    z-index: 10000 !important;
+}
+
+/* Restore color on hover - individual elements */
+*:hover {
+    filter: grayscale(0%) !important;
+}
+
+/* Specific hover effects for business cards */
+.business-card:hover,
+.business-card:hover *,
+.business-card:hover img,
+.business-card:hover .business-logo-img {
+    filter: grayscale(0%) !important;
+    transition: filter 0.3s ease;
+}
+
+/* Enhanced image hover effects */
+img:hover,
+.business-logo-img:hover {
+    filter: grayscale(0%) brightness(1.1) saturate(1.2) !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Navigation and links */
+a:hover,
+a:hover *,
+button:hover,
+button:hover *,
+nav:hover,
+nav:hover * {
+    filter: grayscale(0%) !important;
+}
+
+/* Founder card */
+.founder-card:hover,
+.founder-card:hover * {
+    filter: grayscale(0%) !important;
+}
+
+/* Content sections */
+.hero-content:hover,
+.hero-content:hover *,
+.vision-content:hover,
+.vision-content:hover *,
+.culture-content:hover,
+.culture-content:hover * {
+    filter: grayscale(0%) !important;
+    transition: filter 0.4s ease;
+}
+
+/* Particles.js Background Styling */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Ensure hero content stays above particles */
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
