@@ -720,7 +720,7 @@ class InteractionManager {
 
         // Neural network nodes
         const nodes = [];
-        const nodeCount = 40; // Increased from 25
+        const nodeCount = 60; // Increased from 40 for higher density
         // Add infinity symbol
         const symbols = ['η', 'ξ', '∞'];
 
@@ -729,12 +729,12 @@ class InteractionManager {
             nodes.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
+                vx: (Math.random() - 0.5) * 0.8, // Slightly faster movement
+                vy: (Math.random() - 0.5) * 0.8,
                 symbol: symbols[Math.floor(Math.random() * symbols.length)],
-                color: ['#1e40af', '#7c3aed', '#dc2626', '#059669', '#ea580c'][Math.floor(Math.random() * 5)],
-                opacity: Math.random() * 0.3 + 0.1,
-                size: Math.random() * 8 + 12,
+                color: ['#1a237e', '#283593', '#3949ab', '#1565c0', '#0d47a1'][Math.floor(Math.random() * 5)], // Darker blues for better contrast
+                opacity: Math.random() * 0.4 + 0.4, // Increased opacity (0.4-0.8)
+                size: Math.random() * 10 + 16, // Larger symbols (16-26px)
                 isCenter: false
             });
         }
@@ -778,8 +778,8 @@ class InteractionManager {
             });
 
             // Draw straight connections with better visibility
-            ctx.strokeStyle = `rgba(100, 100, 100, 0.4)`;
-            ctx.lineWidth = 2;
+            ctx.strokeStyle = `rgba(26, 35, 126, 0.6)`; // Darker blue connections
+            ctx.lineWidth = 2.5; // Slightly thicker lines
 
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
@@ -787,29 +787,33 @@ class InteractionManager {
                     const dy = nodes[j].y - nodes[i].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
+                    if (distance < 180) { // Increased connection range
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.globalAlpha = (1 - distance / 150) * 0.6;
+                        ctx.globalAlpha = (1 - distance / 180) * 0.8; // Higher opacity
                         ctx.stroke();
                     }
                 }
             }
 
-            // Draw symbol nodes
+            // Draw symbol nodes with enhanced visibility
             nodes.forEach(node => {
                 ctx.globalAlpha = node.opacity;
                 ctx.fillStyle = node.color;
                 ctx.font = `bold ${node.size}px 'Times New Roman', serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
+
+                // Add stronger glow effect
+                ctx.shadowColor = node.color;
+                ctx.shadowBlur = 8;
                 ctx.fillText(node.symbol, node.x, node.y);
 
-                // Add subtle glow
-                ctx.shadowColor = node.color;
-                ctx.shadowBlur = 4;
+                // Add second layer for better visibility
+                ctx.shadowBlur = 3;
                 ctx.fillText(node.symbol, node.x, node.y);
+
                 ctx.shadowBlur = 0;
             });
 
