@@ -3,11 +3,6 @@ class InteractionManager {
     constructor() {
         this.activeModals = [];
         this.carousels = new Map();
-        this.cursorTrail = {
-            particles: [],
-            mouse: { x: window.innerWidth / 2, y: window.innerHeight / 2 }, // Start at screen center
-            isActive: false
-        };
         this.init();
     }
 
@@ -18,7 +13,6 @@ class InteractionManager {
         this.setupTooltips();
         this.setupSearchFunctionality();
         this.setupAccessibilityFeatures();
-        this.setupCursorEffects();
         this.setupHeroParticles();
         this.setupScrollIndicator();
     }
@@ -704,303 +698,125 @@ class InteractionManager {
         }, duration);
     }
 
-    // Modern cursor effects using optimized library approach
-    setupCursorEffects() {
-        // Check for reduced motion preference
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
+
+    // Custom neural network with curved edges and symbol nodes
+    setupHeroParticles() {
+        const container = document.getElementById('particles-js');
+        if (!container) return;
+
+        // Create canvas for custom neural network
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        container.appendChild(canvas);
+
+        // Setup canvas
+        const resizeCanvas = () => {
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+        };
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Neural network nodes
+        const nodes = [];
+        const nodeCount = 40; // Increased from 25
+        const symbols = ['Ξ', 'η'];
+
+        // Create regular nodes
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                symbol: symbols[Math.floor(Math.random() * symbols.length)],
+                color: ['#1e40af', '#7c3aed', '#dc2626', '#059669', '#ea580c'][Math.floor(Math.random() * 5)],
+                opacity: Math.random() * 0.2 + 0.1,
+                size: Math.random() * 8 + 12,
+                isCenter: false
+            });
         }
 
-        // Initialize spiral cursor effect immediately - always visible
-        console.log('Initializing spiral cursor effect...');
-        this.initSpiralCursor();
-    }
+        // Add central infinity symbol
+        nodes.push({
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            vx: 0,
+            vy: 0,
+            symbol: '∞',
+            color: '#000000',
+            opacity: 0.8,
+            size: 24,
+            isCenter: true
+        });
 
-    initSpiralCursor() {
-        // Prevent multiple instances
-        if (this.cursorTrail.isActive) {
-            console.log('Spiral cursor already active');
-            return;
-        }
+        // Animation loop
+        const animate = () => {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        console.log('Creating spiral cursor particles...');
+            // Update node positions (except center node)
+            nodes.forEach(node => {
+                if (!node.isCenter) {
+                    node.x += node.vx;
+                    node.y += node.vy;
 
-        const particles = [];
-        const particleCount = 12; // Increased count for more variety with new symbols
-        const mouse = { x: 0, y: 0 };
+                    // Bounce off edges
+                    if (node.x <= 0 || node.x >= canvas.width) node.vx *= -1;
+                    if (node.y <= 0 || node.y >= canvas.height) node.vy *= -1;
 
-        // Extended mathematical and Greek symbols
-        const symbols = ['∞', 'Ξ', 'η', 'π', 'φ',  'λ', 'μ','θ', 'Ω'];
-        const allElements = symbols;
+                    // Keep within bounds
+                    node.x = Math.max(0, Math.min(canvas.width, node.x));
+                    node.y = Math.max(0, Math.min(canvas.height, node.y));
+                } else {
+                    // Keep center node at center
+                    node.x = canvas.width / 2;
+                    node.y = canvas.height / 2;
+                }
+            });
 
-        // Create particles
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'cursor-orbit-particle';
+            // Draw straight connections with better visibility
+            ctx.strokeStyle = `rgba(100, 100, 100, 0.4)`;
+            ctx.lineWidth = 2;
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[j].x - nodes[i].x;
+                    const dy = nodes[j].y - nodes[i].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
 
-            // Larger size variation for better visibility
-            const size = 18 + Math.random() * 10; // 18-28px
-            const randomElement = allElements[Math.floor(Math.random() * allElements.length)];
-
-            // Random shape variation
-            const shapes = ['circle', 'square', 'diamond', 'triangle'];
-            const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
-
-            let shapeStyles = '';
-            switch(randomShape) {
-                case 'circle':
-                    shapeStyles = 'border-radius: 50%;';
-                    break;
-                case 'square':
-                    shapeStyles = 'border-radius: 2px;';
-                    break;
-                case 'diamond':
-                    shapeStyles = 'border-radius: 2px; transform: rotate(45deg);';
-                    break;
-                case 'triangle':
-                    shapeStyles = 'clip-path: polygon(50% 0%, 0% 100%, 100% 100%);';
-                    break;
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.globalAlpha = (1 - distance / 150) * 0.6;
+                        ctx.stroke();
+                    }
+                }
             }
 
-            particle.style.cssText = `
-                position: fixed;
-                width: ${size}px;
-                height: ${size}px;
-                ${shapeStyles}
-                pointer-events: none;
-                z-index: 9999;
-                opacity: 0.85;
-                transition: opacity 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: ${size * 0.7}px;
-                font-weight: bold;
-                font-family: 'Times New Roman', serif;
-            `;
+            // Draw symbol nodes
+            nodes.forEach(node => {
+                ctx.globalAlpha = node.opacity;
+                ctx.fillStyle = node.color;
+                ctx.font = `bold ${node.size}px 'Times New Roman', serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(node.symbol, node.x, node.y);
 
-            // Vibrant colors that stand out on white background
-            const colorPalettes = [
-                '#2563eb', // Bright blue
-                '#dc2626', // Bright red
-                '#16a34a', // Bright green
-                '#ca8a04', // Golden yellow
-                '#9333ea', // Bright purple
-                '#ea580c', // Bright orange
-                '#0891b2', // Bright cyan
-                '#be123c'  // Bright rose
-            ];
-
-            const randomColor = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
-
-            particle.style.background = `transparent`;
-            particle.style.color = randomColor;
-            particle.style.boxShadow = `0 0 8px ${randomColor}40`; // Light glow for visibility
-
-            // Add the symbol/element
-            particle.textContent = randomElement;
-
-            document.body.appendChild(particle);
-
-            particles.push({
-                element: particle,
-                angle: (i * Math.PI * 2) / particleCount,
-                baseRadius: 35 + Math.random() * 25, // Base spiral distance
-                radiusOffset: Math.random() * Math.PI * 2, // Random spiral phase
-                spiralSpeed: 0.02 + Math.random() * 0.03, // Spiral in/out speed
-                spiralAmplitude: 15 + Math.random() * 10, // How far spiral extends
-                speed: 0.008 + Math.random() * 0.012, // Rotational speed
-                size: size,
-                symbol: randomElement,
-                x: 0,
-                y: 0
+                // Add subtle glow
+                ctx.shadowColor = node.color;
+                ctx.shadowBlur = 4;
+                ctx.fillText(node.symbol, node.x, node.y);
+                ctx.shadowBlur = 0;
             });
-        }
 
-        // Track mouse movement and update global mouse position
-        document.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-            this.cursorTrail.mouse.x = e.clientX;
-            this.cursorTrail.mouse.y = e.clientY;
-        });
-
-        // Initialize mouse position immediately
-        mouse.x = this.cursorTrail.mouse.x;
-        mouse.y = this.cursorTrail.mouse.y;
-
-        // Animation loop with spiral motion
-        const animate = () => {
-            particles.forEach((particle, index) => {
-                // Update angle for spiral motion
-                particle.angle += particle.speed;
-
-                // Create spiral effect by gradually changing radius
-                particle.radiusOffset += particle.spiralSpeed;
-                const currentRadius = particle.baseRadius + Math.sin(particle.radiusOffset) * particle.spiralAmplitude;
-
-                // Calculate spiral position
-                particle.x = mouse.x + Math.cos(particle.angle) * currentRadius;
-                particle.y = mouse.y + Math.sin(particle.angle) * currentRadius;
-
-                // Apply position (center the particle)
-                particle.element.style.left = `${particle.x - particle.size/2}px`;
-                particle.element.style.top = `${particle.y - particle.size/2}px`;
-            });
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
         };
 
-        // Start continuous animation
-        const continuousAnimate = () => {
-            animate();
-            requestAnimationFrame(continuousAnimate);
-        };
-
-        continuousAnimate();
-
-        // Store for reference
-        this.cursorTrail.particles = particles;
-        this.cursorTrail.isActive = true;
-    }
-
-    // Toggle spiral cursor effects (optional utility)
-    toggleSpiralCursor() {
-        if (this.cursorTrail.isActive) {
-            this.cursorTrail.particles.forEach(particle => {
-                particle.element.style.opacity = '0';
-                setTimeout(() => {
-                    if (particle.element.parentNode) {
-                        particle.element.remove();
-                    }
-                }, 300);
-            });
-            this.cursorTrail.particles = [];
-            this.cursorTrail.isActive = false;
-        } else {
-            this.initSpiralCursor();
-        }
-    }
-
-    // Hero particles.js setup
-    setupHeroParticles() {
-        // Wait for particles.js to load
-        if (typeof particlesJS === 'undefined') {
-            setTimeout(() => this.setupHeroParticles(), 100);
-            return;
-        }
-
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 120,
-                    "density": {
-                        "enable": true,
-                        "value_area": 1000
-                    }
-                },
-                "color": {
-                    "value": ["#1e40af", "#7c3aed", "#dc2626", "#059669", "#ea580c"]
-                },
-                "shape": {
-                    "type": ["circle", "triangle"],
-                    "stroke": {
-                        "width": 1,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 6
-                    }
-                },
-                "opacity": {
-                    "value": 0.3,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 2,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 4,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 3,
-                        "size_min": 1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 200,
-                    "color": "#333333",
-                    "opacity": 0.08,
-                    "width": 1.5,
-                    "shadow": {
-                        "enable": true,
-                        "color": "#000000",
-                        "blur": 2
-                    }
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 0.8,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "bounce",
-                    "bounce": true,
-                    "attract": {
-                        "enable": true,
-                        "rotateX": 3000,
-                        "rotateY": 3000
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": ["grab", "bubble"]
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 250,
-                        "line_linked": {
-                            "opacity": 0.4,
-                            "color": "#ff6b6b"
-                        }
-                    },
-                    "bubble": {
-                        "distance": 200,
-                        "size": 8,
-                        "duration": 0.4,
-                        "opacity": 0.8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 300,
-                        "duration": 2
-                    },
-                    "push": {
-                        "particles_nb": 6
-                    },
-                    "remove": {
-                        "particles_nb": 3
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-        console.log('Particles.js initialized for hero background');
+        animate();
+        console.log('Custom neural network with curved edges and symbols initialized');
     }
 
     // Setup scroll indicator functionality
@@ -1043,6 +859,7 @@ class InteractionManager {
 
         console.log('Scroll indicator functionality enabled');
     }
+
 }
 
 // Initialize interaction manager
