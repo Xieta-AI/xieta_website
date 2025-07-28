@@ -3,6 +3,11 @@ class InteractionManager {
     constructor() {
         this.activeModals = [];
         this.carousels = new Map();
+        this.cursorTrail = {
+            particles: [],
+            mouse: { x: 0, y: 0 },
+            isActive: true
+        };
         this.init();
     }
     
@@ -13,6 +18,7 @@ class InteractionManager {
         this.setupTooltips();
         this.setupSearchFunctionality();
         this.setupAccessibilityFeatures();
+        this.setupCursorEffects();
     }
     
     // Enhanced business card interactions
@@ -694,6 +700,253 @@ class InteractionManager {
                 }
             }, 300);
         }, duration);
+    }
+
+    // Modern cursor effects using optimized library approach
+    setupCursorEffects() {
+        // Check for reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        // Setup link hover detection for orbital particles
+        this.setupLinkHoverEffects();
+    }
+
+    setupLinkHoverEffects() {
+        let isActive = false;
+        let checkInterval = null;
+        
+        // Function to check cursor state
+        const checkCursorState = () => {
+            const element = document.elementFromPoint(this.cursorTrail.mouse.x, this.cursorTrail.mouse.y);
+            if (!element) return;
+            
+            const cursorStyle = window.getComputedStyle(element).cursor;
+            
+            // Check if element or any parent has pointer cursor
+            let hasPointerCursor = cursorStyle === 'pointer' || cursorStyle === 'hand';
+            
+            // Also check for specific interactive elements even if cursor isn't explicitly set
+            if (!hasPointerCursor) {
+                let currentElement = element;
+                while (currentElement && currentElement !== document.body) {
+                    const computedStyle = window.getComputedStyle(currentElement);
+                    if (computedStyle.cursor === 'pointer' || computedStyle.cursor === 'hand') {
+                        hasPointerCursor = true;
+                        break;
+                    }
+                    
+                    // Check for common interactive elements
+                    if (currentElement.matches('a, button, [onclick], .business-card, .interactive, [role="button"]')) {
+                        hasPointerCursor = true;
+                        break;
+                    }
+                    
+                    currentElement = currentElement.parentElement;
+                }
+            }
+            
+            if (hasPointerCursor && !isActive) {
+                isActive = true;
+                this.initOrbitalCursor();
+            } else if (!hasPointerCursor && isActive) {
+                isActive = false;
+                this.hideOrbitalCursor();
+            }
+        };
+        
+        // Track mouse movement and check cursor state
+        document.addEventListener('mousemove', (e) => {
+            this.cursorTrail.mouse.x = e.clientX;
+            this.cursorTrail.mouse.y = e.clientY;
+            
+            // Check cursor state on mouse move
+            checkCursorState();
+        });
+        
+        // Also check periodically for dynamic changes
+        checkInterval = setInterval(checkCursorState, 100);
+        
+        // Store interval for cleanup
+        this.cursorTrail.checkInterval = checkInterval;
+    }
+
+    initOrbitalCursor() {
+        // Prevent multiple instances
+        if (this.cursorTrail.isActive) {
+            return;
+        }
+        
+        const particles = [];
+        const particleCount = 8; // Reduced count for cleaner effect
+        const mouse = { x: 0, y: 0 };
+        
+        // Specific mathematical symbols only
+        const symbols = ['∞', 'Ξ', 'η', 'π'];
+        const allElements = symbols;
+        
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'cursor-orbit-particle';
+            
+            // Larger size variation for better visibility
+            const size = 18 + Math.random() * 10; // 18-28px
+            const randomElement = allElements[Math.floor(Math.random() * allElements.length)];
+            
+            // Random shape variation
+            const shapes = ['circle', 'square', 'diamond', 'triangle'];
+            const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            let shapeStyles = '';
+            switch(randomShape) {
+                case 'circle':
+                    shapeStyles = 'border-radius: 50%;';
+                    break;
+                case 'square':
+                    shapeStyles = 'border-radius: 2px;';
+                    break;
+                case 'diamond':
+                    shapeStyles = 'border-radius: 2px; transform: rotate(45deg);';
+                    break;
+                case 'triangle':
+                    shapeStyles = 'clip-path: polygon(50% 0%, 0% 100%, 100% 100%);';
+                    break;
+            }
+            
+            particle.style.cssText = `
+                position: fixed;
+                width: ${size}px;
+                height: ${size}px;
+                ${shapeStyles}
+                pointer-events: none;
+                z-index: 9999;
+                opacity: 0.85;
+                transition: opacity 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: ${size * 0.7}px;
+                font-weight: bold;
+                font-family: 'Times New Roman', serif;
+            `;
+            
+            // Vibrant colors that stand out on white background
+            const colorPalettes = [
+                '#2563eb', // Bright blue
+                '#dc2626', // Bright red
+                '#16a34a', // Bright green
+                '#ca8a04', // Golden yellow
+                '#9333ea', // Bright purple
+                '#ea580c', // Bright orange
+                '#0891b2', // Bright cyan
+                '#be123c'  // Bright rose
+            ];
+            
+            const randomColor = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+            
+            particle.style.background = `transparent`;
+            particle.style.color = randomColor;
+            particle.style.boxShadow = `0 0 8px ${randomColor}40`; // Light glow for visibility
+            
+            // Add the symbol/element
+            particle.textContent = randomElement;
+            
+            document.body.appendChild(particle);
+            
+            particles.push({
+                element: particle,
+                angle: (i * Math.PI * 2) / particleCount,
+                radius: 35 + Math.random() * 25, // Varied orbital distance
+                speed: 0.005 + Math.random() * 0.01, // Much slower orbital speed
+                size: size,
+                symbol: randomElement,
+                x: 0,
+                y: 0
+            });
+        }
+        
+        // Track mouse movement
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        
+        // Animation loop
+        const animate = () => {
+            particles.forEach((particle, index) => {
+                // Update angle for orbital motion
+                particle.angle += particle.speed;
+                
+                // Calculate orbital position
+                particle.x = mouse.x + Math.cos(particle.angle) * particle.radius;
+                particle.y = mouse.y + Math.sin(particle.angle) * particle.radius;
+                
+                // Apply position (center the particle)
+                particle.element.style.left = `${particle.x - particle.size/2}px`;
+                particle.element.style.top = `${particle.y - particle.size/2}px`;
+            });
+        };
+        
+        animate();
+        
+        // Store for potential cleanup
+        this.cursorTrail.particles = particles;
+        this.cursorTrail.isActive = true;
+        this.cursorTrail.animationId = requestAnimationFrame(() => this.animateOrbitalCursor(animate));
+    }
+
+    animateOrbitalCursor(animateFunction) {
+        if (this.cursorTrail.isActive) {
+            animateFunction();
+            this.cursorTrail.animationId = requestAnimationFrame(() => this.animateOrbitalCursor(animateFunction));
+        }
+    }
+
+    hideOrbitalCursor() {
+        if (this.cursorTrail.isActive) {
+            this.cursorTrail.isActive = false;
+            
+            // Cancel animation
+            if (this.cursorTrail.animationId) {
+                cancelAnimationFrame(this.cursorTrail.animationId);
+            }
+            
+            // Clear interval if exists
+            if (this.cursorTrail.checkInterval) {
+                clearInterval(this.cursorTrail.checkInterval);
+            }
+            
+            // Fade out and remove particles
+            this.cursorTrail.particles.forEach(particle => {
+                particle.element.style.opacity = '0';
+                setTimeout(() => {
+                    if (particle.element.parentNode) {
+                        particle.element.remove();
+                    }
+                }, 300);
+            });
+            
+            this.cursorTrail.particles = [];
+        }
+    }
+
+    // Toggle cursor effects
+    toggleCursorEffects() {
+        if (this.cursorTrail.isActive) {
+            this.cursorTrail.particles.forEach(particle => {
+                particle.element.style.opacity = '0';
+                setTimeout(() => {
+                    if (particle.element.parentNode) {
+                        particle.element.remove();
+                    }
+                }, 300);
+            });
+            this.cursorTrail.isActive = false;
+        } else {
+            this.initOrbitalCursor();
+        }
     }
 }
 

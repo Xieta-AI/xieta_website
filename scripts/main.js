@@ -155,9 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    window.addEventListener('scroll', updateNavbarOnScroll);
-    updateNavbarOnScroll(); // Call once on load
-    
     // Active navigation link highlighting
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
@@ -182,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Call once on load
     
     // Counter animation for statistics
@@ -268,7 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    window.addEventListener('scroll', requestParallax);
     
     // Lazy loading for placeholder images
     function lazyLoadPlaceholders() {
@@ -355,38 +350,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.business-card, .vision-text, .mission-text, .hero-main');
-    animatedElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-    
-    // Parallax effect for hero and other sections
-    function parallaxEffect() {
+    // Enhanced parallax effect for hero and other sections
+    function enhancedParallaxEffect() {
         const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero');
+        const hero = document.querySelector('.hero');
         const visionImage = document.querySelector('.city-skyline');
         
-        if (heroSection) {
-            const rate = scrolled * -0.3;
-            heroSection.style.transform = `translateY(${rate}px)`;
+        // Hero parallax
+        if (hero) {
+            const rate = scrolled * -0.4;
+            hero.style.transform = `translateY(${rate}px)`;
         }
         
+        // Vision image parallax
         if (visionImage) {
             const rect = visionImage.getBoundingClientRect();
             if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -396,21 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Throttle parallax for performance
-    let ticking = false;
-    function requestParallax() {
-        if (!ticking) {
-            requestAnimationFrame(parallaxEffect);
-            ticking = true;
-            setTimeout(() => { ticking = false; }, 16);
-        }
-    }
-    
-    window.addEventListener('scroll', requestParallax);
-    
-    // Enhanced navbar behavior
-    const navbar = document.querySelector('.navbar');
-    function updateNavbarOnScroll() {
+    // Enhanced navbar behavior with backdrop filter
+    function enhancedUpdateNavbarOnScroll() {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
@@ -418,11 +381,26 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.boxShadow = 'none';
+            navbar.style.backdropFilter = 'blur(20px)';
         }
     }
     
-    window.addEventListener('scroll', updateNavbarOnScroll);
-    updateNavbarOnScroll();
+    // Combined scroll handler for performance
+    function handleScroll() {
+        updateNavbarOnScroll();
+        updateActiveNavLink();
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                enhancedParallaxEffect();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    // Single scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    updateNavbarOnScroll(); // Initial call
     
     // Image loading optimization and error handling
     const images = document.querySelectorAll('img');
