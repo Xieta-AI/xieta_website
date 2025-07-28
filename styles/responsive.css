@@ -7,11 +7,11 @@
     .section-container {
         padding: 0 1.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .business-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
@@ -47,6 +47,147 @@
 
     .nav-toggle {
         display: flex;
+    }
+
+    /* Enhanced Vision and Mission Responsive Styles */
+    /* Vision Section Mobile */
+    #vision {
+        padding: 4rem 0 !important;
+    }
+
+    #vision .section-header {
+        margin-bottom: 3rem !important;
+    }
+
+    #vision .section-header h2 {
+        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    }
+
+    #vision div[style*="background:linear-gradient(135deg,#667eea"] {
+        padding: 2.5rem 1.5rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    #vision div[style*="display:grid;grid-template-columns:1.5fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+
+    #vision div[style*="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    #vision div[style*="padding:3rem"] {
+        padding: 2rem !important;
+    }
+
+    /* Mission Section Mobile */
+    #mission {
+        padding: 4rem 0 !important;
+    }
+
+    #mission .section-header {
+        margin-bottom: 3rem !important;
+    }
+
+    #mission .section-header h2 {
+        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    }
+
+    #mission div[style*="display:grid;grid-template-columns:1.5fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+
+    #mission div[style*="padding:3rem 3rem 3rem 4rem"] {
+        padding: 2rem !important;
+    }
+
+    #mission div[style*="top:-2rem"] {
+        top: -1.5rem !important;
+        left: 2rem !important;
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.2rem !important;
+    }
+
+    #mission h4 {
+        font-size: 1.3rem !important;
+    }
+
+    #mission div[style*="margin-top:2rem"] {
+        margin-top: 1.5rem !important;
+    }
+
+    /* Team Section Mobile */
+    #team {
+        padding: 4rem 0 !important;
+    }
+
+    #team .section-header {
+        margin-bottom: 3rem !important;
+    }
+
+    #team .section-header h2 {
+        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    }
+
+    #team div[style*="padding:4rem 3rem"] {
+        padding: 2.5rem 2rem !important;
+    }
+
+    #team .team-story {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    #team div[style*="padding:3rem"] {
+        padding: 2rem !important;
+    }
+
+    #team div[style*="width:80px;height:80px"] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    #team h4 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Trust Section Mobile */
+    #trust {
+        padding: 4rem 0 !important;
+    }
+
+    #trust .section-header {
+        margin-bottom: 3rem !important;
+    }
+
+    #trust .section-header h2 {
+        font-size: clamp(2rem, 8vw, 2.5rem) !important;
+    }
+
+    #trust div[style*="padding:4rem 3rem"] {
+        padding: 2.5rem 2rem !important;
+    }
+
+    #trust .trust-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    #trust div[style*="padding:3rem"] {
+        padding: 2rem !important;
+    }
+
+    #trust div[style*="width:80px;height:80px"] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    #trust h4 {
+        font-size: 1.3rem !important;
     }
 
     .nav-toggle.active .bar:nth-child(2) {

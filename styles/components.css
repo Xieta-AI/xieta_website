@@ -679,6 +679,64 @@
     }
 }
 
+/* Vision and Mission Enhanced Styling */
+.pillar-card:hover,
+.step-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15) !important;
+}
+
+.pillar-card:hover h4,
+.step-card:hover h4 {
+    color: #FF6B35;
+}
+
+/* Vision hero section animation */
+.vision-hero {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .vision-hero {
+        padding: 2rem !important;
+        margin: 2rem 0 !important;
+    }
+
+    .vision-content > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .mission-content > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .vision-pillars {
+        grid-template-columns: 1fr !important;
+    }
+
+    .step-card {
+        padding: 2rem !important;
+    }
+
+    .pillar-card {
+        padding: 2rem !important;
+    }
+}
+
 /* Enhanced business card styling */
 .business-card {
     position: relative;

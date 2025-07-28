@@ -26,9 +26,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#">
-                    <img src="screenshots/Logo.png" alt="Xieta AI" class="logo-img">
-                </a>
+                <a href="#" style="font-weight:bold;font-size:1.2em;color:#222;text-decoration:none;">Xieta AI</a>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#main-content" class="nav-link">Home</a>
@@ -69,7 +67,7 @@
                 <h2>Our Products</h2>
                 <p>AI-powered solutions designed to transform how professionals work with language and data</p>
             </div>
-            
+
             <div class="products-grid">
                 <div class="product-card featured">
                     <div class="product-icon">
@@ -86,7 +84,7 @@
                     <div class="product-status available">Available</div>
                     <a href="https://asktranslator.com/" class="btn btn-primary" target="_blank">Join Waitlist</a>
                 </div>
-                
+
                 <div class="product-card">
                     <div class="product-icon">
                         <div class="icon-placeholder">RR</div>
@@ -102,7 +100,7 @@
                     <div class="product-status coming-soon">Coming Soon</div>
                     <a href="#contact" class="btn btn-secondary">Get Notified</a>
                 </div>
-                
+
                 <div class="product-card">
                     <div class="product-icon">
                         <div class="icon-placeholder">LA</div>
@@ -123,109 +121,167 @@
     </section>
 
     <!-- Vision Section -->
-    <section id="vision" class="vision">
+    <section id="vision" class="vision" style="background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%);padding:8rem 0;">
         <div class="section-container">
-            <div class="section-header">
-                <h2>Our Vision</h2>
-                <p>Artificial intelligence that removes barriers between intention and execution</p>
+            <div class="section-header" style="margin-bottom:6rem;">
+                <h2 style="font-size:clamp(2.8rem,6vw,4rem);font-weight:700;margin-bottom:1.5rem;background:linear-gradient(135deg,#2D3748 0%,#4A5568 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                    <span style="font-size:0.8em;margin-right:1rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));">👁️</span>Our Vision
+                </h2>
+                <p style="font-size:clamp(1.2rem,3vw,1.5rem);font-weight:500;color:#4A5568;max-width:700px;margin:0 auto;line-height:1.5;">Artificial intelligence that removes barriers between intention and execution</p>
             </div>
-            <div class="vision-content">
-                <div class="vision-grid">
-                    <div class="vision-main">
-                        <p class="vision-lead">We see a world where language complexities dissolve, where critical information surfaces instantly, and where professionals across sectors can focus on what matters most—serving their communities and advancing their missions.</p>
-                        <p>Our vision spans the intersection of technology and public service. We believe AI should democratize access to expertise, whether that's helping bridge linguistic divides, empowering legal professionals with instant access to precedents and analysis, or enabling public servants to navigate complex administrative processes with clarity and confidence.</p>
-                        <div class="vision-pillars">
-                            <div class="pillar-card">
-                                <div class="pillar-icon">🌐</div>
-                                <h4>Beyond Translation</h4>
-                                <p>Building products and solutions that understand context, preserve meaning, and respect the nuanced requirements of professional communication across multiple languages and domains.</p>
-                            </div>
-                            <div class="pillar-card">
-                                <div class="pillar-icon">⚡</div>
-                                <h4>Workflow Revolution</h4>
-                                <p>From document analysis to decision support, creating AI tools that enhance human judgment rather than replace it.</p>
-                            </div>
-                            <div class="pillar-card">
-                                <div class="pillar-icon">🎯</div>
-                                <h4>Accessible Expertise</h4>
-                                <p>Making complex data interpretation, document analysis, and regulatory compliance accessible to professionals regardless of technical background.</p>
-                            </div>
-                        </div>
+
+            <!-- Hero Quote Section -->
+            <div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:4rem 3rem;border-radius:24px;margin-bottom:6rem;text-align:center;box-shadow:0 20px 60px rgba(102,126,234,0.3);position:relative;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);pointer-events:none;"></div>
+                <div style="position:relative;z-index:2;">
+                    <h3 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:600;line-height:1.3;margin:0;text-shadow:0 2px 4px rgba(0,0,0,0.2);">We see a world where language complexities dissolve, where critical information surfaces instantly, and where professionals across sectors can focus on what matters most—serving their communities and advancing their missions.</h3>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:6rem;align-items:start;margin-bottom:6rem;">
+                <div>
+                    <p style="font-size:1.3rem;line-height:1.8;color:#4A5568;margin-bottom:3rem;font-weight:400;">Our vision spans the intersection of technology and public service. We believe AI should democratize access to expertise, whether that's helping bridge linguistic divides, empowering legal professionals with instant access to precedents and analysis, or enabling public servants to navigate complex administrative processes with clarity and confidence.</p>
+                </div>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                    <div style="position:relative;">
+                        <div style="position:absolute;inset:-1rem;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:20px;opacity:0.1;"></div>
+                        <img src="images/Vision.png" alt="Vision illustration" style="position:relative;max-width:100%;height:auto;border-radius:16px;box-shadow:0 16px 64px rgba(0,0,0,0.15);" loading="lazy">
                     </div>
-                    <div class="vision-image">
-                        <img src="images/Vision.png" alt="Xieta Vision" class="section-image" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Vision Pillars -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:3rem;">
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(74,144,226,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(74,144,226,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">🌐</span>
                     </div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Beyond Translation</h4>
+                    <p style="color:#718096;line-height:1.7;margin:0;font-size:1.1rem;">Building products and solutions that understand context, preserve meaning, and respect the nuanced requirements of professional communication across multiple languages and domains.</p>
+                </div>
+
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(255,107,53,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">⚡</span>
+                    </div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Workflow Revolution</h4>
+                    <p style="color:#718096;line-height:1.7;margin:0;font-size:1.1rem;">From document analysis to decision support, creating AI tools that enhance human judgment rather than replace it.</p>
+                </div>
+
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(80,200,120,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#50C878 0%,#228B22 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#50C878 0%,#228B22 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(80,200,120,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">🎯</span>
+                    </div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Accessible Expertise</h4>
+                    <p style="color:#718096;line-height:1.7;margin:0;font-size:1.1rem;">Making complex data interpretation, document analysis, and regulatory compliance accessible to professionals regardless of technical background.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission Section -->
-    <section id="mission" class="mission">
+    <section id="mission" class="mission" style="background:linear-gradient(135deg,#ffffff 0%,#f8f9fa 100%);padding:8rem 0;">
         <div class="section-container">
-            <div class="section-header">
-                <h2>Our Mission</h2>
-                <p>To recognize problems and reinvent workflows</p>
+            <div class="section-header" style="margin-bottom:6rem;">
+                <h2 style="font-size:clamp(2.8rem,6vw,4rem);font-weight:700;margin-bottom:1.5rem;background:linear-gradient(135deg,#2D3748 0%,#4A5568 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                    <span style="font-size:0.8em;margin-right:1rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));">🚀</span>Our Mission
+                </h2>
+                <p style="font-size:clamp(1.2rem,3vw,1.5rem);font-weight:500;color:#4A5568;max-width:700px;margin:0 auto;line-height:1.5;">To recognize problems and reinvent workflows</p>
             </div>
-            <div class="mission-content">
-                <div class="mission-steps">
-                    <div class="step-card">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h4>Identifying friction points</h4>
-                            <p>We start by deeply understanding where language creates bottlenecks in critical workflows.</p>
+
+            <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:6rem;align-items:start;">
+                <!-- Mission Steps -->
+                <div style="display:grid;gap:3rem;">
+                    <div style="background:white;padding:3rem 3rem 3rem 4rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;position:relative;transition:all 0.4s ease;" onmouseover="this.style.transform='translateX(8px)';this.style.boxShadow='0 24px 64px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);border-radius:0 4px 4px 0;"></div>
+                        <div style="position:absolute;top:-2rem;left:3rem;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);color:white;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.5rem;box-shadow:0 8px 24px rgba(255,107,53,0.3);" aria-hidden="true">01</div>
+                        <div style="margin-top:2rem;">
+                            <h4 style="font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Identifying Friction Points</h4>
+                            <p style="color:#718096;line-height:1.7;margin:0;font-size:1.2rem;">We start by deeply understanding where language creates bottlenecks in critical workflows, analyzing real-world challenges that slow down professionals and organizations.</p>
                         </div>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h4>Building precision solutions</h4>
-                            <p>Our AI systems are meticulously designed to address specific communication challenges with unprecedented accuracy.</p>
+
+                    <div style="background:white;padding:3rem 3rem 3rem 4rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;position:relative;transition:all 0.4s ease;" onmouseover="this.style.transform='translateX(8px)';this.style.boxShadow='0 24px 64px rgba(74,144,226,0.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);border-radius:0 4px 4px 0;"></div>
+                        <div style="position:absolute;top:-2rem;left:3rem;background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);color:white;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.5rem;box-shadow:0 8px 24px rgba(74,144,226,0.3);" aria-hidden="true">02</div>
+                        <div style="margin-top:2rem;">
+                            <h4 style="font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Building Precision Solutions</h4>
+                            <p style="color:#718096;line-height:1.7;margin:0;font-size:1.2rem;">Our AI systems are meticulously designed to address specific communication challenges with unprecedented accuracy, ensuring every solution meets professional-grade standards.</p>
                         </div>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h4>Measuring real-world impact</h4>
-                            <p>Success isn't measured in lines of code, but in hours saved and opportunities created for our users.</p>
+
+                    <div style="background:white;padding:3rem 3rem 3rem 4rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;position:relative;transition:all 0.4s ease;" onmouseover="this.style.transform='translateX(8px)';this.style.boxShadow='0 24px 64px rgba(80,200,120,0.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(135deg,#50C878 0%,#228B22 100%);border-radius:0 4px 4px 0;"></div>
+                        <div style="position:absolute;top:-2rem;left:3rem;background:linear-gradient(135deg,#50C878 0%,#228B22 100%);color:white;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.5rem;box-shadow:0 8px 24px rgba(80,200,120,0.3);" aria-hidden="true">03</div>
+                        <div style="margin-top:2rem;">
+                            <h4 style="font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Measuring Real-World Impact</h4>
+                            <p style="color:#718096;line-height:1.7;margin:0;font-size:1.2rem;">Success isn't measured in lines of code, but in hours saved and opportunities created for our users, with continuous feedback loops to refine our approach.</p>
                         </div>
                     </div>
                 </div>
-                <div class="mission-image">
-                    <img src="images/mission.png" alt="Xieta Mission" class="section-image" loading="lazy">
+
+                <!-- Mission Image -->
+                <div style="display:flex;justify-content:center;align-items:center;">
+                    <div style="position:relative;">
+                        <div style="position:absolute;inset:-1.5rem;background:linear-gradient(135deg,#FF6B35,#4A90E2,#50C878);border-radius:24px;opacity:0.1;filter:blur(8px);"></div>
+                        <img src="images/mission.png" alt="Mission illustration" style="position:relative;max-width:100%;height:auto;border-radius:20px;box-shadow:0 20px 64px rgba(0,0,0,0.15);" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- From the Team Section -->
-    <section id="team" class="team-section">
+    <section id="team" class="team-section" style="background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%);padding:8rem 0;">
         <div class="section-container">
-            <div class="section-header">
-                <h2>From the Team</h2>
-                <p>AI that understands what matters</p>
+            <div class="section-header" style="margin-bottom:6rem;">
+                <h2 style="font-size:clamp(2.8rem,6vw,4rem);font-weight:700;margin-bottom:1.5rem;background:linear-gradient(135deg,#2D3748 0%,#4A5568 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                    <span style="font-size:0.8em;margin-right:1rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));">👥</span>From the Team
+                </h2>
+                <p style="font-size:clamp(1.2rem,3vw,1.5rem);font-weight:500;color:#4A5568;max-width:700px;margin:0 auto;line-height:1.5;">AI that understands what matters</p>
             </div>
-            <div class="team-content">
-                <div class="team-image">
-                    <img src="images/grid_mouse_hover_effect.png" alt="Team Working" class="section-image" loading="lazy">
+
+            <!-- Hero Quote Section -->
+            <div style="background:linear-gradient(135deg,#764ba2 0%,#667eea 100%);color:white;padding:4rem 3rem;border-radius:24px;margin-bottom:6rem;text-align:center;box-shadow:0 20px 60px rgba(118,75,162,0.3);position:relative;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);pointer-events:none;"></div>
+                <div style="position:relative;z-index:2;">
+                    <h3 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:600;line-height:1.3;margin:0;text-shadow:0 2px 4px rgba(0,0,0,0.2);">We founded Xieta AI in 2024 because we believed that linguistic diversity should be a strength, not a limitation—and that every professional deserves access to AI's transformative potential.</h3>
                 </div>
-                <div class="team-story">
-                    <div class="story-card">
-                        <div class="story-icon">⚠️</div>
-                        <h4>The Problem We Witnessed</h4>
-                        <p>Our founders witnessed something troubling: while AI models grew increasingly sophisticated, they carried an inherent English bias—ignoring the rich tapestry of vernacular languages like Punjabi and Hindi that billions speak daily. The very communities that could benefit most from AI's transformative power found themselves locked out by linguistic barriers.</p>
+            </div>
+
+            <div class="team-content" style="display:grid;grid-template-columns:1fr;gap:4rem;">
+                <div class="team-story" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:3rem;">
+                    <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                        <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);"></div>
+                        <div style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(255,107,53,0.3);">
+                            <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">⚠️</span>
+                        </div>
+                        <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">The Problem We Witnessed</h4>
+                        <p style="color:#718096;line-height:1.7;margin:0;font-size:1.1rem;">Our founders witnessed something troubling: while AI models grew increasingly sophisticated, they carried an inherent English bias—ignoring the rich tapestry of vernacular languages like Punjabi and Hindi that billions speak daily. The very communities that could benefit most from AI's transformative power found themselves locked out by linguistic barriers.</p>
                     </div>
-                    
-                    <div class="story-card">
-                        <div class="story-icon">⚖️</div>
-                        <h4>Real-World Impact</h4>
-                        <p>In courtrooms across Punjab, they saw legal professionals struggling with rudimentary translation tools that mangled critical contract clauses. Government offices relied on painfully slow, manual processes that should have been automated years ago. The cascading effects: delayed justice due to mistranslated evidence, lost opportunities due to language barriers, and government efficiency hampered by archaic workflows.</p>
+
+                    <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(74,144,226,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                        <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);"></div>
+                        <div style="background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(74,144,226,0.3);">
+                            <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">⚖️</span>
+                        </div>
+                        <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Real-World Impact</h4>
+                        <p style="color:#718096;line-height:1.7;margin:0;font-size:1.1rem;">In courtrooms across Punjab, they saw legal professionals struggling with rudimentary translation tools that mangled critical contract clauses. Government offices relied on painfully slow, manual processes that should have been automated years ago. The cascading effects: delayed justice due to mistranslated evidence, lost opportunities due to language barriers, and government efficiency hampered by archaic workflows.</p>
                     </div>
-                    
-                    <div class="story-card highlighted">
-                        <div class="story-icon">🚀</div>
-                        <h4>Our Solution</h4>
-                        <p>With a vision to bring transformative change, our founders refused to accept this status quo. Incorporated in Chandigarh in 2024, Xieta AI emerged from their unwavering belief that linguistic diversity should be a strength, not a limitation. Our team of engineers, linguists and legal experts work shoulder-to-shoulder from our registered office in Punjab, democratizing access to AI's promise.</p>
+
+                    <div style="background:linear-gradient(135deg,#50C878 0%,#228B22 100%);color:white;padding:3rem;border-radius:24px;box-shadow:0 20px 60px rgba(80,200,120,0.3);transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px) scale(1.02)';this.style.boxShadow='0 32px 80px rgba(80,200,120,0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 20px 60px rgba(80,200,120,0.3)'">
+                        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);pointer-events:none;"></div>
+                        <div style="position:relative;z-index:2;">
+                            <div style="background:rgba(255,255,255,0.2);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;backdrop-filter:blur(10px);">
+                                <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">🚀</span>
+                            </div>
+                            <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:white;text-shadow:0 2px 4px rgba(0,0,0,0.1);">Our Solution</h4>
+                            <p style="color:rgba(255,255,255,0.9);line-height:1.7;margin:0;font-size:1.1rem;text-shadow:0 1px 2px rgba(0,0,0,0.1);">With a vision to bring transformative change, our founders refused to accept this status quo. Incorporated in Chandigarh in 2024, Xieta AI emerged from their unwavering belief that linguistic diversity should be a strength, not a limitation. Our team of engineers, linguists and legal experts work shoulder-to-shoulder from our registered office in Punjab, democratizing access to AI's promise.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,35 +289,52 @@
     </section>
 
     <!-- Why Trust Us Section -->
-    <section id="trust" class="trust-section">
+    <section id="trust" class="trust-section" style="background:linear-gradient(135deg,#ffffff 0%,#f8f9fa 100%);padding:8rem 0;">
         <div class="section-container">
-            <div class="section-header">
-                <h2>Why Trust Us</h2>
-                <p>Built on principles of reliability, accuracy, and security</p>
+            <div class="section-header" style="margin-bottom:6rem;">
+                <h2 style="font-size:clamp(2.8rem,6vw,4rem);font-weight:700;margin-bottom:1.5rem;background:linear-gradient(135deg,#2D3748 0%,#4A5568 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                    <span style="font-size:0.8em;margin-right:1rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));">🛡️</span>Why Trust Us
+                </h2>
+                <p style="font-size:clamp(1.2rem,3vw,1.5rem);font-weight:500;color:#4A5568;max-width:700px;margin:0 auto;line-height:1.5;">Built on principles of reliability, accuracy, and security</p>
             </div>
-            <div class="trust-content">
-                <div class="trust-image">
-                    <img src="images/Hyperpure.png" alt="Trust and Security" class="section-image" loading="lazy">
+
+            <!-- Hero Quote Section -->
+            <div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:4rem 3rem;border-radius:24px;margin-bottom:6rem;text-align:center;box-shadow:0 20px 60px rgba(102,126,234,0.3);position:relative;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);pointer-events:none;"></div>
+                <div style="position:relative;z-index:2;">
+                    <h3 style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:600;line-height:1.3;margin:0;text-shadow:0 2px 4px rgba(0,0,0,0.2);">Trust isn't earned through promises—it's built through consistent delivery, rigorous testing, and unwavering commitment to the communities we serve.</h3>
                 </div>
-                <div class="trust-grid">
-                    <div class="trust-card">
-                        <div class="trust-icon">🎯</div>
-                        <h4>Problem-First Approach</h4>
-                        <p>We identify real-world friction points before building solutions, ensuring our AI addresses genuine needs rather than creating technology for its own sake.</p>
-                        <div class="trust-badge">Validated</div>
+            </div>
+
+            <div class="trust-content" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:3rem;">
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(74,144,226,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(74,144,226,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">🎯</span>
                     </div>
-                    <div class="trust-card">
-                        <div class="trust-icon">✅</div>
-                        <h4>Verified Accuracy</h4>
-                        <p>Our translation systems undergo rigorous testing with legal documents, government forms, and technical content to ensure professional-grade precision.</p>
-                        <div class="trust-badge">Tested</div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Problem-First Approach</h4>
+                    <p style="color:#718096;line-height:1.7;margin-bottom:2rem;font-size:1.1rem;">We identify real-world friction points before building solutions, ensuring our AI addresses genuine needs rather than creating technology for its own sake.</p>
+                    <div style="background:linear-gradient(135deg,#4A90E2 0%,#357ABD 100%);color:white;padding:0.5rem 1.2rem;border-radius:20px;font-size:0.9rem;font-weight:600;text-align:center;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 4px 12px rgba(74,144,226,0.3);">Validated</div>
+                </div>
+
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(80,200,120,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#50C878 0%,#228B22 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#50C878 0%,#228B22 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(80,200,120,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">✅</span>
                     </div>
-                    <div class="trust-card">
-                        <div class="trust-icon">🔒</div>
-                        <h4>Enterprise-Grade Security</h4>
-                        <p>Built with privacy and security at the core, protecting sensitive documents and maintaining confidentiality throughout the translation process.</p>
-                        <div class="trust-badge">Secured</div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Verified Accuracy</h4>
+                    <p style="color:#718096;line-height:1.7;margin-bottom:2rem;font-size:1.1rem;">Our translation systems undergo rigorous testing with legal documents, government forms, and technical content to ensure professional-grade precision.</p>
+                    <div style="background:linear-gradient(135deg,#50C878 0%,#228B22 100%);color:white;padding:0.5rem 1.2rem;border-radius:20px;font-size:0.9rem;font-weight:600;text-align:center;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 4px 12px rgba(80,200,120,0.3);">Tested</div>
+                </div>
+
+                <div style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.4s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-12px)';this.style.boxShadow='0 24px 64px rgba(255,107,53,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 12px 48px rgba(0,0,0,0.08)'">
+                    <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);"></div>
+                    <div style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:0 8px 24px rgba(255,107,53,0.3);">
+                        <span style="font-size:2.5rem;filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));" aria-hidden="true">🔒</span>
                     </div>
+                    <h4 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:#2D3748;">Enterprise-Grade Security</h4>
+                    <p style="color:#718096;line-height:1.7;margin-bottom:2rem;font-size:1.1rem;">Built with privacy and security at the core, protecting sensitive documents and maintaining confidentiality throughout the translation process.</p>
+                    <div style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);color:white;padding:0.5rem 1.2rem;border-radius:20px;font-size:0.9rem;font-weight:600;text-align:center;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 4px 12px rgba(255,107,53,0.3);">Secured</div>
                 </div>
             </div>
         </div>
@@ -274,7 +347,7 @@
                 <h2>Get in Touch. Build with AI.</h2>
                 <p>Ready to experience the future of language translation? Our team is here to answer your questions and help you</p>
             </div>
-            
+
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-card">
@@ -282,13 +355,13 @@
                         <h4>General Inquiries</h4>
                         <p>director@xieta.ai</p>
                     </div>
-                    
+
                     <div class="contact-card">
                         <div class="contact-icon">📱</div>
                         <h4>Phone</h4>
                         <p>+91 8289069674</p>
                     </div>
-                    
+
                     <div class="contact-card">
                         <div class="contact-icon">🏢</div>
                         <h4>Registered Office</h4>
@@ -297,13 +370,13 @@
                         Chandigarh, India, 160002</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-wrapper">
                     <div class="form-header">
                         <h3>Send us a Message</h3>
                         <p>Whether you're interested in being notified when AskTranslator launches, exploring enterprise solutions, or joining our growing team in Chandigarh, <strong>we'd love to hear from you</strong></p>
                     </div>
-                    
+
                     <form class="contact-form" action="#" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -323,7 +396,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
-                    
+
                     <div class="cta-section">
                         <a href="https://asktranslator.com/" class="btn btn-secondary" target="_blank">Notify Me About AskTranslator</a>
                     </div>
@@ -358,7 +431,7 @@
 
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
+
     <script src="scripts/main.js"></script>
     <script src="scripts/animations.js"></script>
     <script src="scripts/interactions.js"></script>
