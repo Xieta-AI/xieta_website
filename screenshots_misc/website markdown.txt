@@ -1,0 +1,131 @@
+# Xieta isn’t just a name. It’s a promise.
+
+We build AI that endures—products that redefine accuracy and efficiency, starting with **AskTranslator**, which, powered by state-of-the-art AI models and a carefully crafted processing workflow, delivers professional-grade translations of complex Punjabi documents into precise English versions.
+
+[Join the Waitlist: AskTranslator](https://asktranslator.com/)
+
+---
+
+## From the Team
+
+### AI that understands what matters
+
+Our founders,witnessed something troubling: while AI models grew increasingly sophisticated, they carried an inherent English bias—ignoring the rich tapestry of vernacular languages like Punjabi and Hindi that billions speak daily. The very communities that could benefit most from AI's transformative power found themselves locked out by linguistic barriers. In courtrooms across Punjab, they saw legal professionals struggling with rudimentary translation tools that mangled critical contract clauses. Government offices relied on painfully slow, manual processes that should have been automated years ago. 
+
+The breaking point came when they realized the cascading effects: delayed justice due to mistranslated evidence, lost opportunities due to language barriers, and government efficiency hampered by archaic workflows. While Silicon Valley celebrated AI breakthroughs, entire communities remained excluded from the revolution happening around them.
+
+With a vision to bring transformative change, our founders refused to accept this status quo.Incorporated in Chandigarh in 2024, Xieta AI emerged from their unwavering belief that linguistic diversity should be a strength, not a limitation. Our team of engineers, linguists and legal experts work shoulder-to-shoulder from our registered office in Punjab, not just translating words, but democratizing access to AI's promise—ensuring that cutting-edge technology serves every community with the precision and respect they deserve.
+
+---
+
+## Our Product
+
+At the heart of Xieta’s journey lies the synergy between our forthcoming products. **AskTranslator** is just the first step in our mission to transform cross-language communication.
+
+### AskTranslator
+
+Frustrated with generic translation tools that mangle your important documents? AskTranslator changes the game. With the help of state-of-the-art AI models and carefully crafted processing workflows, we deliver professional-grade translation of complex Punjabi documents into English versions that preserve every heading, bullet point, and legal clause while maintaining context and nuance.
+
+- **Structure-preserving**
+- **Context-aware**
+- **Accurate**
+
+### Future Innovations
+
+Our roadmap includes:
+
+- Expanding to additional languages  
+- Developing specialized domain-specific products for legal, adminsitration, and technical content  
+- Creating seamless integrations with popular productivity tools  
+
+Each product we build furthers our mission of breaking down language barriers permanently.
+
+[Join the Waitlist: AskTranslator](https://asktranslator.com/)
+
+---
+
+## Our Vision
+
+Xieta envisions a future where artificial intelligence removes barriers between intention and execution. We see a world where language complexities dissolve, where critical information surfaces instantly, and where professionals across sectors can focus on what matters most—serving their communities and advancing their missions.
+
+Our vision spans the intersection of technology and public service. We believe AI should democratize access to expertise, whether that’s helping bridge linguistic divides, empowering legal professionals with instant access to precedents and analysis, or enabling public servants to navigate complex administrative processes with clarity and confidence.
+
+- **Beyond Translation:** Building products and solutions that understand context, preserve meaning, and respect the nuanced requirements of professional communication across multiple languages and domains.  
+- **Workflow Revolution:** From document analysis to decision support, creating AI tools that enhance human judgment rather than replace it.  
+- **Accessible Expertise:** Making complex data interpretation, document analysis, and regulatory compliance accessible to professionals regardless of technical background.  
+
+---
+
+## Our Mission
+
+To recognize problems and reinvent workflows:
+
+1. **Identifying friction points**  
+   We start by deeply understanding where language creates bottlenecks in critical workflows.
+
+2. **Building precision solutions**  
+   Our AI systems are meticulously designed to address specific communication challenges with unprecedented accuracy.
+
+3. **Measuring real-world impact**  
+   Success isn’t measured in lines of code, but in hours saved and opportunities created for our users.
+
+---
+
+## Why Trust Us
+
+- **Problem-First Approach**  
+- **Verified Accuracy**  
+- **Enterprise-Grade Security**
+
+---
+
+## Get in Touch. Build with AI.
+
+Ready to experience the future of language translation? Our team is here to answer your questions and help you:
+
+**Contact:
+- General: director@xieta.ai  
+- Mobile: +91 8289069674 
+
+**Registered Office:**  
+Xieta AI Private Limited  
+Plot No.25, 1st Floor, Industrial Area, Phase-I,Chandigarh, India,
+160002 
+
+© 2025 Xieta AI Private Limited · CIN U58200CH2024PTC045901 · Registered Office: Chandigarh, India · Privacy · Terms 
+---
+
+# Contact Us:
+ Whether you’re interested in being notified when AskTranslator launches, exploring enterprise solutions, or joining our growing team in Chandigarh, 
+ **We’d love to hear from you**
+ 
+<!-- contact_form.md -->
+ 
+<form action="#" method="post">
+  <p>
+    <label for="name"><strong>Name:</strong></label><br />
+    <input type="text" id="name" name="name" required />
+  </p>
+  <p>
+    <label for="mobile"><strong>Mobile:</strong></label><br />
+    <input type="tel" id="mobile" name="mobile" required />
+  </p>
+  <p>
+    <label for="email"><strong>Email:</strong></label><br />
+    <input type="email" id="email" name="email" required />
+  </p>
+  <p>
+    <label for="query"><strong>Query:</strong></label><br />
+    <textarea id="query" name="query" rows="5" required></textarea>
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+
+[Notify Me About AskTranslator](https://asktranslator.com/)
+
+---
+
+© 2025 Xieta AI Private Limited · CIN U58200CH2024PTC045901 · Registered Office: Chandigarh, India · Privacy · Terms 

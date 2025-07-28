@@ -526,20 +526,33 @@
     border: 0;
 }
 
+/* Click particle effects */
+.click-particle {
+    position: fixed !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+    z-index: 99999 !important;
+    filter: grayscale(0%) brightness(1) saturate(1.5) !important;
+    will-change: transform, opacity !important;
+    transition: none !important;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-    /* Reduced motion styles can be added here if needed */
+    .click-particle {
+        display: none;
+    }
 }
 
 /* Global grayscale effect with hover color restoration */
-* {
+*:not(.click-particle) {
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
 
 
 /* Restore color on hover - individual elements */
-*:hover {
+*:not(.click-particle):hover {
     filter: grayscale(0%) !important;
 }
 

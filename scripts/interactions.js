@@ -15,6 +15,7 @@ class InteractionManager {
         this.setupAccessibilityFeatures();
         this.setupHeroParticles();
         this.setupScrollIndicator();
+        this.setupClickParticleEffect();
     }
 
     // Enhanced business card interactions
@@ -720,7 +721,8 @@ class InteractionManager {
         // Neural network nodes
         const nodes = [];
         const nodeCount = 40; // Increased from 25
-        const symbols = ['Ξ', 'η'];
+        // Add infinity symbol
+        const symbols = ['η', 'ξ', '∞'];
 
         // Create regular nodes
         for (let i = 0; i < nodeCount; i++) {
@@ -731,24 +733,24 @@ class InteractionManager {
                 vy: (Math.random() - 0.5) * 0.5,
                 symbol: symbols[Math.floor(Math.random() * symbols.length)],
                 color: ['#1e40af', '#7c3aed', '#dc2626', '#059669', '#ea580c'][Math.floor(Math.random() * 5)],
-                opacity: Math.random() * 0.2 + 0.1,
+                opacity: Math.random() * 0.3 + 0.1,
                 size: Math.random() * 8 + 12,
                 isCenter: false
             });
         }
 
-        // Add central infinity symbol
-        nodes.push({
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            vx: 0,
-            vy: 0,
-            symbol: '∞',
-            color: '#000000',
-            opacity: 0.8,
-            size: 24,
-            isCenter: true
-        });
+        // // Add central infinity symbol
+        // nodes.push({
+        //     x: canvas.width / 2,
+        //     y: canvas.height / 2,
+        //     vx: 0,
+        //     vy: 0,
+        //     symbol: '∞',
+        //     color: '#000000',
+        //     opacity: 0.8,
+        //     size: 24,
+        //     isCenter: true
+        // });
 
         // Animation loop
         const animate = () => {
@@ -778,7 +780,7 @@ class InteractionManager {
             // Draw straight connections with better visibility
             ctx.strokeStyle = `rgba(100, 100, 100, 0.4)`;
             ctx.lineWidth = 2;
-            
+
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
                     const dx = nodes[j].x - nodes[i].x;
@@ -823,7 +825,7 @@ class InteractionManager {
     setupScrollIndicator() {
         const scrollIndicator = document.querySelector('.scroll-indicator');
         const scrollArrow = document.querySelector('.scroll-arrow');
-        
+
         if (!scrollIndicator || !scrollArrow) return;
 
         // Add click functionality to scroll to next section
@@ -858,6 +860,95 @@ class InteractionManager {
         scrollIndicator.style.cursor = 'pointer';
 
         console.log('Scroll indicator functionality enabled');
+    }
+
+    // Setup click particle gyro effect
+    setupClickParticleEffect() {
+        // Add event listener to window instead of document to catch all clicks
+        window.addEventListener('click', (e) => {
+            // Get accurate click coordinates
+            const x = e.clientX;
+            const y = e.clientY;
+
+            console.log(`Click detected at: (${x}, ${y}) on element:`, e.target);
+            console.log(`Page scroll position: ${window.scrollY}`);
+
+            this.createParticleGyro(x, y);
+        }, true); // Use capture phase
+
+        // Also add to document as fallback
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            console.log(`Document click backup at: (${x}, ${y})`);
+        });
+
+        console.log('Click particle effect initialized');
+    }
+
+    createParticleGyro(x, y) {
+        const particleCount = 20;
+        const particles = [];
+
+        // Color palette
+        const colors = [
+            '#ff6b35', '#f7931e', '#ffd23f', '#06ffa5',
+            '#3b82f6', '#8b5cf6', '#ec4899', '#10b981'
+        ];
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'click-particle';
+
+            const size = Math.random() * 8 + 4; // 4-12px
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            particle.style.cssText = `
+                position: fixed;
+                left: ${x - size/2}px;
+                top: ${y - size/2}px;
+                width: ${size}px;
+                height: ${size}px;
+                background: ${color};
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 99999;
+                filter: grayscale(0%) !important;
+                box-shadow: 0 0 10px ${color}80;
+                transform-origin: center center;
+                will-change: transform, opacity;
+            `;
+
+            document.body.appendChild(particle);
+
+            // Calculate random direction and distance
+            const angle = (Math.PI * 2 * i) / particleCount + (Math.random() - 0.5) * 0.5;
+            const distance = Math.random() * 150 + 50; // 50-200px
+            const duration = Math.random() * 800 + 600; // 600-1400ms
+
+            const targetX = x + Math.cos(angle) * distance;
+            const targetY = y + Math.sin(angle) * distance;
+
+            // Animate particle in gyro motion
+            particle.animate([
+                {
+                    transform: 'scale(1) rotate(0deg)',
+                    opacity: '1'
+                },
+                {
+                    transform: `translate(${targetX - x}px, ${targetY - y}px) scale(0.5) rotate(720deg)`,
+                    opacity: '0'
+                }
+            ], {
+                duration: duration,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                fill: 'forwards'
+            }).onfinish = () => {
+                particle.remove();
+            };
+        }
+
+        console.log(`Created particle gyro at (${x}, ${y})`);
     }
 
 }
