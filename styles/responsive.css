@@ -63,9 +63,69 @@
 
     /* Hero section */
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        min-height: 50vh;
         text-align: center;
+        padding: 2rem 0;
+    }
+
+    /* Products Section */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Vision Section */
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .vision-image {
+        order: -1;
+    }
+
+    .vision-pillars {
+        margin-top: 1rem;
+    }
+
+    /* Mission Section */
+    .mission-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mission-image {
+        order: -1;
+    }
+
+    /* Team Section */
+    .team-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .team-image {
+        order: -1;
+    }
+
+    /* Trust Section */
+    .trust-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .trust-image {
+        order: -1;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem;
     }
 
     .hero-founder {

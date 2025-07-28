@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Test</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .test-nav { background: #f0f0f0; padding: 10px; margin-bottom: 20px; }
+        .logo-test { height: 40px; width: auto; margin-right: 20px; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="test-nav">
+        <h2>Logo Visibility Test</h2>
+        <img src="screenshots/Logo.png" alt="Xieta Logo" class="logo-test">
+        <span>← Logo should appear here</span>
+    </div>
+    
+    <div class="section">
+        <h3>Image Tests</h3>
+        <p>Vision image: <img src="images/Vision.png" alt="Vision" style="height: 50px; margin: 0 10px;"></p>
+        <p>Mission image: <img src="images/mission.png" alt="Mission" style="height: 50px; margin: 0 10px;"></p>
+        <p>Team image: <img src="images/grid_mouse_hover_effect.png" alt="Team" style="height: 50px; margin: 0 10px;"></p>
+    </div>
+    
+    <div class="section">
+        <h3>File Access Test</h3>
+        <p>If you can see the logo and images above, the file paths are correct.</p>
+        <p>If images don't load, there might be a server or file permission issue.</p>
+    </div>
+    
+    <div class="section">
+        <h3>Next Steps</h3>
+        <p>1. Open this test file in your browser: <code>file://D:/github/xieta_website/test.html</code></p>
+        <p>2. Or serve it via HTTP: <code>python -m http.server 8000</code> then go to <code>http://localhost:8000/test.html</code></p>
+        <p>3. Check if logo and images load correctly</p>
+        <p>4. Then open the main <code>index.html</code> to see the full website</p>
+    </div>
+</body>
+</html>
