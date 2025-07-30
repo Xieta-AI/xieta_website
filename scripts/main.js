@@ -405,6 +405,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image loading optimization and error handling
     const images = document.querySelectorAll('img');
     images.forEach(img => {
+        // Skip navbar logo - it should always be visible
+        if (img.alt === 'Xieta AI Logo' || img.closest('.nav-logo')) {
+            return;
+        }
+        
         // Add loading animation
         img.addEventListener('load', () => {
             img.style.opacity = '1';
