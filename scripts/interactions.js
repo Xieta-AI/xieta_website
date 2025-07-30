@@ -781,21 +781,21 @@ class InteractionManager {
             ctx.strokeStyle = `rgba(26, 35, 126, 0.6)`; // Darker blue connections
             ctx.lineWidth = 2.5; // Slightly thicker lines
 
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const dx = nodes[j].x - nodes[i].x;
-                    const dy = nodes[j].y - nodes[i].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+            // for (let i = 0; i < nodes.length; i++) {
+            //     for (let j = i + 1; j < nodes.length; j++) {
+            //         const dx = nodes[j].x - nodes[i].x;
+            //         const dy = nodes[j].y - nodes[i].y;
+            //         const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 180) { // Increased connection range
-                        ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.globalAlpha = (1 - distance / 180) * 0.8; // Higher opacity
-                        ctx.stroke();
-                    }
-                }
-            }
+            //         if (distance < 180) { // Increased connection range
+            //             ctx.beginPath();
+            //             ctx.moveTo(nodes[i].x, nodes[i].y);
+            //             ctx.lineTo(nodes[j].x, nodes[j].y);
+            //             ctx.globalAlpha = (1 - distance / 180) * 0.8; // Higher opacity
+            //             ctx.stroke();
+            //         }
+            //     }
+            // }
 
             // Draw symbol nodes with enhanced visibility
             nodes.forEach(node => {
