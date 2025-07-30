@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xieta AI Privacy Policy - How we collect, use, and protect your personal information">
+    <meta name="keywords" content="privacy policy, data protection, personal information, Xieta AI">
+    <meta name="author" content="Xieta AI">
+    <title>Privacy Policy - Xieta AI</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: #4A5568;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            padding: 90px 0 20px;
+            text-align: center;
+            color: #1a237e;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1a237e;
+            text-shadow: 0 2px 8px rgba(26,35,126,0.2);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #3949ab;
+            margin: 0;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .policy-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+        }
+
+        .policy-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #3949ab;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .policy-content p, .policy-content li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4A5568;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .policy-content th, .policy-content td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .policy-content th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2D3748;
+        }
+
+        .policy-content a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .policy-content a:hover {
+            text-decoration: underline;
+        }
+
+        .effective-date {
+            background: rgba(26,35,126,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #1a237e;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                padding: 85px 0 15px;
+            }
+            
+            .content-section {
+                padding: 50px 0;
+            }
+            
+            .policy-content {
+                padding: 2rem;
+            }
+            
+            .content-container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="home.html">
+                    <img src="assets/logo.svg" alt="Xieta AI Logo" />
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">Vision</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Privacy Policy</h1>
+            <p>How we collect, use, and protect your personal information</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="policy-content">
+                <div class="effective-date">
+                    <strong>Effective Date:</strong> July 29, 2025
+                </div>
+
+                <h2>1. Introduction</h2>
+                <p>Xieta AI Private Limited ("<strong>Xieta</strong>", "<strong>we</strong>", "<strong>our</strong>" or "<strong>us</strong>") is a company registered in Chandigarh, India. We operate this marketing website (the "<strong>Site</strong>") to introduce our AI-powered products—beginning with <strong>AskTranslator</strong>—and to let visitors join wait-lists or get in touch.</p>
+                <p>This notice explains what personal information we collect on the Site, how we use it, and the choices you have. A separate privacy notice will apply on any product website (e.g., AskTranslator) once you sign up or upload documents there.</p>
+
+                <h2>2. Information We Collect</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Examples & Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Contact information</strong></td>
+                            <td>Name, email, phone number, organisation. Used to respond to enquiries and manage wait-lists.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business details</strong></td>
+                            <td>Role, industry, partnership interests. Used to explore collaboration opportunities.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Device & usage data</strong></td>
+                            <td>Browser type, IP, pages viewed, clicks. Used for analytics, security and to improve our Site and products.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies</strong></td>
+                            <td>Essential cookies run the Site; optional analytics cookies help us understand traffic.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Children's data</strong></td>
+                            <td>The Site is intended for adults; we do not knowingly collect data from anyone under 18.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>We do <strong>not</strong> ask for sensitive personal data (health, biometric, financial, etc.) on this Site.</p>
+
+                <h2>3. How We Use Your Data</h2>
+                <ul>
+                    <li><strong>Provide services & respond to you</strong> – answer questions, manage wait-lists and send requested information.</li>
+                    <li><strong>Product updates & marketing</strong> – with your consent, email you about AskTranslator or future Xieta products; you can unsubscribe at any time.</li>
+                    <li><strong>Improve our Site and products</strong> – analyse aggregated usage data and user feedback to refine website design, improve products, workflows & process design, enhance security and tune our AI models.</li>
+                    <li><strong>Legal & safety</strong> – comply with applicable law, enforce our terms and protect the rights, property or safety of Xieta, our users or others.</li>
+                </ul>
+
+                <h2>4. Sharing of Information</h2>
+                <p>We do <strong>not</strong> sell or rent your personal information. We may share it only:</p>
+                <ol>
+                    <li><strong>Service providers</strong> – trusted partners who host the Site, send emails or analyse traffic. They act on our instructions and must safeguard your data.</li>
+                    <li><strong>Business transfers</strong> – if we reorganise or sell our business, data may transfer to the new owner under the same protections.</li>
+                    <li><strong>Legal reasons</strong> – to comply with lawful requests or defend our rights.</li>
+                    <li><strong>Product improvement</strong> – aggregated, de-identified usage insights may be shared internally with Xieta's product teams to help make our AI tools more accurate and user-friendly.</li>
+                    <li><strong>External links</strong> – the Site links to third-party pages (e.g., the AskTranslator portal). Their privacy practices apply on those sites.</li>
+                </ol>
+
+                <h2>5. Storage, Transfers and Security</h2>
+                <p>Personal data is stored mainly on servers in India, though we may use cloud providers in other countries. Whenever data moves abroad, we ensure comparable protection levels.</p>
+                <p>We apply technical and organisational safeguards such as encryption, access controls, log monitoring and routine security reviews. Usage analytics that help improve features and model performance are retained only as long as needed for those purposes and then deleted or anonymised.</p>
+
+                <h2>6. Your Rights</h2>
+                <p>Depending on your location, you may have the right to:</p>
+                <ul>
+                    <li><strong>Access</strong> – know whether we hold your personal data and obtain a copy.</li>
+                    <li><strong>Correct</strong> – update inaccurate or incomplete information.</li>
+                    <li><strong>Delete</strong> – request erasure when data is no longer needed or if you withdraw consent.</li>
+                    <li><strong>Withdraw consent / object</strong> – stop receiving marketing or object to certain processing.</li>
+                </ul>
+                <p>To exercise these rights, email us at the address below. We may need to verify your identity before fulfilling a request.</p>
+
+                <h2>7. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy periodically. Any changes will appear on this page with a new "Effective date." Significant changes may also be announced prominently on the Site. Continued use of the Site after changes means you accept the updated policy.</p>
+
+                <div class="contact-info">
+                    <h2>8. Contact Us</h2>
+                    <p><strong>Email:</strong> <a href="mailto:director@xieta.ai">director@xieta.ai</a></p>
+                    <p><strong>Phone:</strong> +91 8289069674</p>
+                    <p><strong>Address:</strong> Xieta AI Private Limited, Plot No.25, 1st Floor, Industrial Area, Phase-I, Chandigarh, India 160002</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; border-top: 1px solid #e9ecef; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: flex-end;">
+            <div style="display: flex; gap: 2rem;">
+                <a href="privacy.html" style="color: #6c757d; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;" onmouseover="this.style.color='#1a237e'" onmouseout="this.style.color='#6c757d'">Privacy Policy</a>
+                <a href="disclaimer.html" style="color: #6c757d; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;" onmouseover="this.style.color='#1a237e'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/common.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/interactions.js"></script>
+</body>
+</html>

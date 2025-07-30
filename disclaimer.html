@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xieta AI Website Disclaimer - Important information about our services and content">
+    <meta name="keywords" content="disclaimer, terms, AI services, Xieta AI">
+    <meta name="author" content="Xieta AI">
+    <title>Website Disclaimer - Xieta AI</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: #4A5568;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            padding: 90px 0 20px;
+            text-align: center;
+            color: #1a237e;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1a237e;
+            text-shadow: 0 2px 8px rgba(26,35,126,0.2);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #3949ab;
+            margin: 0;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .disclaimer-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+        }
+
+        .disclaimer-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a237e;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 0.5rem;
+        }
+
+        .disclaimer-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #3949ab;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .disclaimer-content p, .disclaimer-content li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4A5568;
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-content ul, .disclaimer-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .disclaimer-content a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .disclaimer-content a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            background: rgba(26,35,126,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #1a237e;
+            font-style: italic;
+        }
+
+        .important-notice {
+            background: rgba(255,107,53,0.1);
+            border: 1px solid rgba(255,107,53,0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .important-notice p {
+            margin: 0;
+            font-weight: 500;
+            color: #d63384;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                padding: 85px 0 15px;
+            }
+            
+            .content-section {
+                padding: 50px 0;
+            }
+            
+            .disclaimer-content {
+                padding: 2rem;
+            }
+            
+            .content-container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="home.html">
+                    <img src="assets/logo.svg" alt="Xieta AI Logo" />
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">Vision</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Website Disclaimer</h1>
+            <p>Important information about our services and content</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="disclaimer-content">
+                <div class="last-updated">
+                    <strong>Last Updated:</strong> July 29, 2025
+                </div>
+
+                <h2>1. Informational Purpose Only</h2>
+                <p>The content on <strong>Xieta AI</strong>'s marketing website (the "Site") is provided <strong>for general informational purposes</strong>. Nothing here is intended as professional, legal, financial or technical advice, nor should it be relied on as such. For specific guidance, please consult a qualified professional.</p>
+
+                <h2>2. AI-Related Content</h2>
+                <p>Our posts, demos and sample outputs may be generated or assisted by large-language-model (LLM) technology. AI outputs can contain inaccuracies, outdated information or unintended bias.</p>
+                <div class="important-notice">
+                    <p>You acknowledge that you use any such content <strong>at your own discretion and risk</strong>.</p>
+                </div>
+
+                <h2>3. No Warranties</h2>
+                <p>The Site and its content are provided <strong>"as is" and "as available," without warranties of any kind</strong>, whether express or implied, including but not limited to accuracy, completeness, merchantability, fitness for a particular purpose or non-infringement. Xieta AI does not warrant that the Site will be uninterrupted, secure, error-free or free of viruses.</p>
+
+                <h2>4. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, <strong>Xieta AI Private Limited</strong> (including its directors, employees and affiliates) shall <strong>not be liable for any direct, indirect, incidental, consequential or punitive damages</strong> arising out of, or in connection with, your use of—or inability to use—the Site or any content on it.</p>
+
+                <h2>5. Third-Party Links & Resources</h2>
+                <p>The Site may contain links to external websites or services that are not operated or controlled by Xieta AI. We provide these links for convenience only and <strong>do not endorse or assume responsibility for</strong> the content, products or practices of any third parties.</p>
+
+                <h2>6. Intellectual Property Notice</h2>
+                <p>Unless otherwise indicated, all text, graphics, trademarks, logos and other content on the Site are the intellectual property of Xieta AI Private Limited or its licensors. You may not reproduce, distribute, modify or create derivative works from any Site content without our prior written permission.</p>
+
+                <h2>7. No Guarantee of Results</h2>
+                <p>Any case studies, testimonials or sample translations shown on the Site illustrate potential use cases only. <strong>Past performance does not guarantee future results</strong>, and your experience may differ.</p>
+
+                <h2>8. Forward-Looking Statements</h2>
+                <p>Pages on this Site may contain forward-looking statements about our plans, goals or expected product features. Actual results and timelines may differ materially due to development priorities, regulatory changes or other factors. Xieta AI undertakes no obligation to update such statements.</p>
+
+                <h2>9. Translation-Accuracy Disclaimer</h2>
+                <p>AskTranslator and other AI translation tools showcased on the Site are intended to assist, not replace, human expertise. For critical documents—especially legal, medical or technical materials—<strong>you should have a qualified professional review any AI-generated translation</strong> before relying on it.</p>
+
+                <div class="important-notice">
+                    <p><strong>Important:</strong> Always verify AI translations with qualified professionals for critical documents.</p>
+                </div>
+
+                <h2>10. User-Generated Content</h2>
+                <p>If the Site allows comments, reviews or other user submissions, you are solely responsible for any content you post. We reserve the right (but have no obligation) to monitor, edit or remove user-generated content that we deem inappropriate or unlawful.</p>
+
+                <h2>11. Product-Specific Terms</h2>
+                <p>This disclaimer covers the marketing Site only. Any use of our products (e.g., <strong>AskTranslator</strong>) is subject to the separate terms of service and product-specific policies presented on the relevant product website.</p>
+
+                <h2>12. Updates</h2>
+                <p>We may update or modify this disclaimer at any time without prior notice. Your continued use of the Site after any modifications constitutes acceptance of the updated disclaimer.</p>
+
+                <div class="contact-info">
+                    <h3>Contact</h3>
+                    <p><strong>Email:</strong> <a href="mailto:director@xieta.ai">director@xieta.ai</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; border-top: 1px solid #e9ecef; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: flex-end;">
+            <div style="display: flex; gap: 2rem;">
+                <a href="privacy.html" style="color: #6c757d; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;" onmouseover="this.style.color='#1a237e'" onmouseout="this.style.color='#6c757d'">Privacy Policy</a>
+                <a href="disclaimer.html" style="color: #6c757d; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease;" onmouseover="this.style.color='#1a237e'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/common.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/interactions.js"></script>
+</body>
+</html>
