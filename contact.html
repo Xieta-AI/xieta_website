@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <style>
-        /* Reset body and html margins/padding */
         * {
             margin: 0;
             padding: 0;
@@ -22,156 +21,480 @@
         body, html {
             margin: 0;
             padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
+            scroll-padding-top: 100px;
         }
-        .navbar-scrolled {
-            background: rgba(255,255,255,0.98) !important;
-            box-shadow: 0 12px 48px rgba(0,0,0,0.12) !important;
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: #4A5568;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 24px;
+            height: 3px;
+            background: #667eea;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #1a237e;
+            padding: 100px 0 60px;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: #1a237e;
+            text-shadow: 0 2px 8px rgba(26,35,126,0.2);
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #3949ab;
+            text-shadow: 0 1px 3px rgba(26,35,126,0.1);
+        }
+
+        .hero-cta {
+            background: rgba(26,35,126,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(26,35,126,0.2);
+            color: #1a237e;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: rgba(26,35,126,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+            background: #fafafa;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #3949ab;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info - Horizontal Layout */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: #1a237e;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .contact-card .address {
+            color: #3949ab;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: white;
+            padding: 50px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .form-wrapper {
+            background: #fafafa;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .form-header p {
+            color: #3949ab;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .faq-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: #3949ab;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1a237e 0%, #82eb0b 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26,35,126,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,35,126,0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 80px 0 40px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .form-wrapper {
+                padding: 1.5rem;
+            }
+
+            .section-container {
+                padding: 0 1.5rem;
+            }
+
+            .contact-section {
+                padding: 40px 0;
+            }
+
+            .form-section {
+                padding: 30px 0;
+            }
+
+            .faq-section {
+                padding: 30px 0;
+            }
+
+            .cta-section {
+                padding: 30px 0;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.08);position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.3s ease;">
-        <div class="nav-container" style="max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:80px;">
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="nav-logo">
-                <a href="home.html" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
-                    <img src="assets/logo.svg" alt="Xieta AI Logo" style="height:40px;width:auto;filter:contrast(1.2) saturate(1.3) !important;opacity:1 !important;" />
+                <a href="home.html">
+                    <img src="assets/logo.svg" alt="Xieta AI Logo" />
                 </a>
             </div>
-            <div class="nav-menu" id="nav-menu" style="display:flex;align-items:center;gap:3rem;">
-                <a href="home.html" class="nav-link" style="color:#4A5568;font-weight:500;text-decoration:none;transition:all 0.3s ease;position:relative;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#4A5568'">Home</a>
-                <a href="products.html" class="nav-link" style="color:#4A5568;font-weight:500;text-decoration:none;transition:all 0.3s ease;position:relative;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#4A5568'">Products</a>
-                <a href="about.html#vision" class="nav-link" style="color:#4A5568;font-weight:500;text-decoration:none;transition:all 0.3s ease;position:relative;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#4A5568'">Vision</a>
-                <a href="team.html" class="nav-link" style="color:#4A5568;font-weight:500;text-decoration:none;transition:all 0.3s ease;position:relative;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#4A5568'">Team</a>
-                <a href="contact.html" class="nav-link" style="color:#4A5568;font-weight:500;text-decoration:none;transition:all 0.3s ease;position:relative;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#4A5568'">Contact</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">Vision</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
-            <div class="nav-toggle" id="nav-toggle" style="display:none;flex-direction:column;gap:4px;cursor:pointer;">
-                <span class="bar" style="width:24px;height:3px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:2px;transition:all 0.3s ease;"></span>
-                <span class="bar" style="width:24px;height:3px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:2px;transition:all 0.3s ease;"></span>
-                <span class="bar" style="width:24px;height:3px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:2px;transition:all 0.3s ease;"></span>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section style="background:linear-gradient(135deg,#e3f2fd 0%,#bbdefb 50%,#90caf9 100%);padding-top:80px;padding-bottom:2rem;">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Let's Build Something Amazing Together</h1>
+            <p>Ready to transform your business with AI? Our team is here to help you harness the power of intelligent language solutions.</p>
+            <a href="#contact" class="hero-cta">
+                <span>💬</span>
+                Start the Conversation
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-section" id="contact">
         <div class="section-container">
-            <div style="text-align:center;">
-                <div style="display:inline-flex;align-items:center;background:rgba(26,35,126,0.1);backdrop-filter:blur(10px);border:1px solid rgba(26,35,126,0.2);border-radius:50px;padding:0.75rem 1.5rem;margin-bottom:2rem;font-size:0.95rem;font-weight:500;color:#1a237e;">
-                    <span style="margin-right:0.5rem;">📧</span>
-                    Let's Connect
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Choose the best way to reach us. We're here to help and answer any questions you might have.</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>director@xieta.ai</p>
                 </div>
-                <h1 style="font-size:clamp(2.8rem,6vw,4rem);font-weight:700;margin-bottom:1.5rem;color:#1a237e;">Get in Touch. Build with AI.</h1>
-                <p style="font-size:clamp(1.2rem,3vw,1.5rem);font-weight:500;color:#3949ab;max-width:700px;margin:0 auto;line-height:1.5;">Ready to experience the future of language translation? Our team is here to answer your questions and help you harness the power of AI.</p>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Call Us</h3>
+                    <p>+91 8289069674</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p class="address">
+                        Xieta AI Private Limited<br>
+                        Industrial Area, Phase-I<br>
+                        Chandigarh, India, 160002
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" style="background:linear-gradient(135deg,#ffffff 0%,#f8f9fa 100%);padding:1rem 0;">
-        <div class="section-container">
-            <div class="contact-content" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
-                <div class="contact-info">
-                    <h2 style="font-size:2.5rem;font-weight:700;color:#2D3748;margin-bottom:2rem;">Let's Talk</h2>
-                    <p style="font-size:1.2rem;color:#4A5568;margin-bottom:3rem;line-height:1.6;">Whether you're interested in being notified when AskTranslator launches, exploring enterprise solutions, or joining our growing team in Chandigarh, we'd love to hear from you.</p>
-
-                    <div style="display:grid;gap:2rem;margin-bottom:3rem;">
-                        <div class="contact-card" style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.08)'">
-                            <div class="contact-icon" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:white;font-size:1.5rem;">📧</div>
-                            <h4 style="font-size:1.3rem;font-weight:700;color:#2D3748;margin-bottom:0.5rem;">General Inquiries</h4>
-                            <p style="color:#667eea;font-weight:600;margin:0;font-size:1.1rem;">director@xieta.ai</p>
-                        </div>
-
-                        <div class="contact-card" style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.08)'">
-                            <div class="contact-icon" style="background:linear-gradient(135deg,#50C878 0%,#228B22 100%);width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:white;font-size:1.5rem;">📱</div>
-                            <h4 style="font-size:1.3rem;font-weight:700;color:#2D3748;margin-bottom:0.5rem;">Phone</h4>
-                            <p style="color:#50C878;font-weight:600;margin:0;font-size:1.1rem;">+91 8289069674</p>
-                        </div>
-
-                        <div class="contact-card" style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.08)'">
-                            <div class="contact-icon" style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:white;font-size:1.5rem;">🏢</div>
-                            <h4 style="font-size:1.3rem;font-weight:700;color:#2D3748;margin-bottom:0.5rem;">Registered Office</h4>
-                            <p style="color:#4A5568;margin:0;line-height:1.6;">
-                                Xieta AI Private Limited<br>
-                                Plot No.25, 1st Floor, Industrial Area, Phase-I,<br>
-                                Chandigarh, India, 160002
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div style="background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%);padding:2rem;border-radius:16px;border:1px solid #E2E8F0;">
-                        <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1.5rem;">Quick Actions</h4>
-                        <div style="display:grid;gap:1rem;">
-                            <a href="https://xieta.aidaform.com/free-enquiry-form" target="_blank" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:1rem 1.5rem;border-radius:12px;font-weight:600;text-decoration:none;transition:all 0.3s ease;display:flex;align-items:center;gap:0.75rem;" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='translateX(0)'">
-                                <span>🎯</span>
-                                Join AskTranslator Waitlist
-                            </a>
-                            <a href="products.html" style="background:white;color:#667eea;padding:1rem 1.5rem;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid #667eea;transition:all 0.3s ease;display:flex;align-items:center;gap:0.75rem;" onmouseover="this.style.background='#667eea';this.style.color='white';this.style.transform='translateX(4px)'" onmouseout="this.style.background='white';this.style.color='#667eea';this.style.transform='translateX(0)'">
-                                <span>🛠️</span>
-                                Explore Our Products
-                            </a>
-                        </div>
-                    </div>
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h3>Send us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                 </div>
 
-                <div class="contact-form-wrapper" style="background:white;padding:3rem;border-radius:24px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <div class="form-header" style="margin-bottom:2rem;">
-                        <h3 style="font-size:1.8rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">Send us a Message</h3>
-                        <p style="color:#4A5568;line-height:1.6;margin:0;">Get in touch with our team for any inquiries about our products, partnerships, or career opportunities.</p>
-                    </div>
-
-                    <div data-aidaform-app="form202405" data-url="https://xieta.aidaform.com/free-basic-contact-form" data-width="100%" data-height="500px" data-do-resize></div>
-                    <script>(function(){var r,d=document,gt=d.getElementById,cr=d.createElement,tg=d.getElementsByTagName,id="aidaform-app";if(!gt.call(d,id)){r=cr.call(d,"script");r.id=id;r.src="https://widget.aidaform.com/embed.js";(d.head || tg.call(d,"head")[0]).appendChild(r);}})()</script>
-
-                    <div class="cta-section" style="margin-top:2rem;text-align:center;">
-                        <a href="https://xieta.aidaform.com/free-enquiry-form" class="btn btn-secondary" target="_blank" style="background:linear-gradient(135deg,#FF6B35 0%,#F7931E 100%);color:white;padding:1rem 2rem;border-radius:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.75rem;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(255,107,53,0.3)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-                            <span>🔔</span>
-                            Notify Me About AskTranslator
-                        </a>
-                    </div>
-                </div>
+                <div data-aidaform-app="form202405" data-url="https://xieta.aidaform.com/free-basic-contact-form" data-width="100%" data-height="400px" data-do-resize></div>
+                <script>(function(){var r,d=document,gt=d.getElementById,cr=d.createElement,tg=d.getElementsByTagName,id="aidaform-app";if(!gt.call(d,id)){r=cr.call(d,"script");r.id=id;r.src="https://widget.aidaform.com/embed.js";(d.head || tg.call(d,"head")[0]).appendChild(r);}})()</script>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section style="background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%);padding:2rem 0;">
+    <section class="faq-section">
         <div class="section-container">
-            <div style="text-align:center;margin-bottom:6rem;">
-                <h2 style="font-size:2.5rem;font-weight:700;color:#2D3748;margin-bottom:2rem;">Frequently Asked Questions</h2>
-                <p style="font-size:1.3rem;color:#4A5568;max-width:600px;margin:0 auto;line-height:1.6;">Quick answers to common questions about Xieta AI and our products</p>
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about Xieta AI and our products.</p>
             </div>
 
-            <div style="max-width:800px;margin:0 auto;display:grid;gap:2rem;">
-                <div style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">When will AskTranslator be available?</h4>
-                    <p style="color:#4A5568;margin:0;line-height:1.6;">We're currently in the final stages of development and testing. Join our waitlist to be among the first to know when AskTranslator launches.</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>When will AskTranslator be available?</h4>
+                    <p>We're currently in the final stages of development and testing. Join our waitlist to be among the first to know when AskTranslator launches.</p>
                 </div>
 
-                <div style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">What types of documents can AskTranslator handle?</h4>
-                    <p style="color:#4A5568;margin:0;line-height:1.6;">AskTranslator is designed to handle complex Punjabi documents including legal contracts, government forms, technical documentation, and business correspondence with professional-grade accuracy.</p>
+                <div class="faq-item">
+                    <h4>What documents can AskTranslator handle?</h4>
+                    <p>AskTranslator is designed to handle complex Punjabi documents including legal contracts, government forms, and technical documentation with professional-grade accuracy.</p>
                 </div>
 
-                <div style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">Is my data secure with Xieta AI?</h4>
-                    <p style="color:#4A5568;margin:0;line-height:1.6;">Absolutely. We use end-to-end encryption for all document processing and automatically delete documents from our servers after translation. Your data privacy and security are our top priorities.</p>
+                <div class="faq-item">
+                    <h4>Is my data secure with Xieta AI?</h4>
+                    <p>Absolutely. We use end-to-end encryption for all document processing and automatically delete documents from our servers after translation.</p>
                 </div>
 
-                <div style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">Do you offer enterprise solutions?</h4>
-                    <p style="color:#4A5568;margin:0;line-height:1.6;">Yes, we're developing enterprise-grade solutions for organizations that need high-volume, secure translation services. Contact us to discuss your specific requirements.</p>
-                </div>
-
-                <div style="background:white;padding:2rem;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #E2E8F0;">
-                    <h4 style="font-size:1.2rem;font-weight:700;color:#2D3748;margin-bottom:1rem;">Are you hiring?</h4>
-                    <p style="color:#4A5568;margin:0;line-height:1.6;">We're always looking for talented individuals who share our vision. We're particularly interested in AI engineers, linguists, and legal experts. Reach out to us with your background and interests.</p>
+                <div class="faq-item">
+                    <h4>Do you offer enterprise solutions?</h4>
+                    <p>Yes, we're developing enterprise-grade solutions for organizations that need high-volume, secure translation services. Contact us to discuss your requirements.</p>
                 </div>
             </div>
         </div>

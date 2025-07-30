@@ -1,0 +1,49 @@
+# Website Disclaimer  
+_Last updated: 29 July,2025
+
+## 1  Informational purpose only  
+The content on **Xieta AI**’s marketing website (the “Site”) is provided **for general informational purposes**.  
+Nothing here is intended as professional, legal, financial or technical advice, nor should it be relied on as such.  
+For specific guidance, please consult a qualified professional.
+
+## 2  AI‑related content  
+Our posts, demos and sample outputs may be generated or assisted by large‑language‑model (LLM) technology.  
+AI outputs can contain inaccuracies, outdated information or unintended bias.  
+You acknowledge that you use any such content **at your own discretion and risk**.
+
+## 3  No warranties  
+The Site and its content are provided **“as is” and “as available,” without warranties of any kind**, whether express or implied, including but not limited to accuracy, completeness, merchantability, fitness for a particular purpose or non‑infringement.  
+Xieta AI does not warrant that the Site will be uninterrupted, secure, error‑free or free of viruses.
+
+## 4  Limitation of liability  
+To the maximum extent permitted by law, **Xieta AI Private Limited** (including its directors, employees and affiliates) shall **not be liable for any direct, indirect, incidental, consequential or punitive damages** arising out of, or in connection with, your use of—or inability to use—the Site or any content on it.
+
+## 5  Third‑party links & resources  
+The Site may contain links to external websites or services that are not operated or controlled by Xieta AI.  
+We provide these links for convenience only and **do not endorse or assume responsibility for** the content, products or practices of any third parties.
+
+## 6  Intellectual‑property notice  
+Unless otherwise indicated, all text, graphics, trademarks, logos and other content on the Site are the intellectual property of Xieta AI Private Limited or its licensors.  
+You may not reproduce, distribute, modify or create derivative works from any Site content without our prior written permission.
+
+## 7  No guarantee of results  
+Any case studies, testimonials or sample translations shown on the Site illustrate potential use cases only. **Past performance does not guarantee future results**, and your experience may differ.
+
+## 8  Forward‑looking statements  
+Pages on this Site may contain forward‑looking statements about our plans, goals or expected product features. Actual results and timelines may differ materially due to development priorities, regulatory changes or other factors. Xieta AI undertakes no obligation to update such statements.
+
+## 9  Translation‑accuracy disclaimer  
+AskTranslator and other AI translation tools showcased on the Site are intended to assist, not replace, human expertise. For critical documents—especially legal, medical or technical materials—**you should have a qualified professional review any AI‑generated translation** before relying on it.
+
+## 10  User‑generated content  
+If the Site allows comments, reviews or other user submissions, you are solely responsible for any content you post. We reserve the right (but have no obligation) to monitor, edit or remove user‑generated content that we deem inappropriate or unlawful.
+
+## 11  Product‑specific terms  
+This disclaimer covers the marketing Site only. Any use of our products (e.g., **AskTranslator**) is subject to the separate terms of service and product‑specific policies presented on the relevant product website.
+
+## 12  Updates  
+We may update or modify this disclaimer at any time without prior notice. Your continued use of the Site after any modifications constitutes acceptance of the updated disclaimer.
+
+---
+
+**Contact:** [director@xieta.ai](mailto:director@xieta.ai)

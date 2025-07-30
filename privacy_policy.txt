@@ -1,0 +1,76 @@
+# Xieta AI Privacy Policy  
+**Effective date: 29 July 2025**
+
+## 1  Introduction  
+Xieta AI Private Limited (“**Xieta**”, **“we”**, **“our”** or **“us”**) is a company registered in Chandigarh, India. We operate this marketing website (the **“Site”**) to introduce our AI-powered products—beginning with **AskTranslator**—and to let visitors join wait-lists or get in touch.  
+This notice explains what personal information we collect on the Site, how we use it, and the choices you have. A separate privacy notice will apply on any product website (e.g., AskTranslator) once you sign up or upload documents there.
+
+---
+
+## 2  Information we collect  
+
+| **Category** | **Examples & Purpose** |
+|--------------|------------------------|
+| **Contact information** | Name, email, phone number, organisation. Used to respond to enquiries and manage wait-lists. |
+| **Business details** | Role, industry, partnership interests. Used to explore collaboration opportunities. |
+| **Device & usage data** | Browser type, IP, pages viewed, clicks. Used for analytics, security and **to improve our Site and products**. |
+| **Cookies** | Essential cookies run the Site; optional analytics cookies help us understand traffic. |
+| **Children’s data** | The Site is intended for adults; we do not knowingly collect data from anyone under 18. |
+
+We do **not** ask for sensitive personal data (health, biometric, financial, etc.) on this Site.
+
+---
+
+## 3  How we use your data  
+
+- **Provide services & respond to you** – answer questions, manage wait-lists and send requested information.  
+- **Product updates & marketing** – with your consent, email you about AskTranslator or future Xieta products; you can unsubscribe at any time.  
+- **Improve our Site *and* products** – analyse aggregated usage data and user feedback to refine website design,improve products,workflows & process design, enhance security and tune our AI models.  
+- **Legal & safety** – comply with applicable law, enforce our terms and protect the rights, property or safety of Xieta, our users or others.
+
+---
+
+## 4  Sharing of information  
+
+We do **not** sell or rent your personal information. We may share it only:
+
+1. **Service providers** – trusted partners who host the Site, send emails or analyse traffic. They act on our instructions and must safeguard your data.  
+2. **Business transfers** – if we reorganise or sell our business, data may transfer to the new owner under the same protections.  
+3. **Legal reasons** – to comply with lawful requests or defend our rights.  
+4. **Product improvement** – aggregated, de-identified usage insights may be shared internally with Xieta’s product teams to help **make our AI tools more accurate and user-friendly**.  
+5. **External links** – the Site links to third-party pages (e.g., the AskTranslator portal). Their privacy practices apply on those sites.
+
+---
+
+## 5  Storage, transfers and security  
+
+Personal data is stored mainly on servers in India, though we may use cloud providers in other countries. Whenever data moves abroad, we ensure comparable protection levels.
+
+We apply technical and organisational safeguards such as encryption, access controls, log monitoring and routine security reviews. Usage analytics that help **improve features and model performance** are retained only as long as needed for those purposes and then deleted or anonymised.
+
+---
+
+## 6  Your rights  
+
+Depending on your location, you may have the right to:
+
+- **Access** – know whether we hold your personal data and obtain a copy.  
+- **Correct** – update inaccurate or incomplete information.  
+- **Delete** – request erasure when data is no longer needed or if you withdraw consent.  
+- **Withdraw consent / object** – stop receiving marketing or object to certain processing.  
+
+To exercise these rights, email us at the address below. We may need to verify your identity before fulfilling a request.
+
+---
+
+## 7  Changes to this policy  
+
+We may update this Privacy Policy periodically. Any changes will appear on this page with a new “Effective date.” Significant changes may also be announced prominently on the Site. Continued use of the Site after changes means you accept the updated policy.
+
+---
+
+## 8  Contact us  
+
+**Email:** [director@xieta.ai](mailto:director@xieta.ai)  
+**Phone:** +91 8289069674  
+**Address:** Xieta AI Private Limited, Plot No.25, 1st Floor, Industrial Area, Phase-I, Chandigarh, India 160002
